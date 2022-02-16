@@ -30,6 +30,16 @@ const sassRules = {
     exclude: /node_modules/
 };
 
+const fileLoaderRules = {
+    test: /\.(png|jpe?g|gif|tiff)$/i,
+    loader: 'file-loader',
+    exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+    options: {
+        esModule: false,
+        name: '[name].[ext]',
+    },
+};
+
 // Plugins
 const plugins = (mode) => [
     new HtmlWebpackPlugin({
@@ -73,15 +83,15 @@ const config = (mode) => ({
     // Dev Server
     devServer: {
         static: './build',
-        port: 9000,
-        open: true,
+        historyApiFallback: true,
+        port: 9000
     },
     // Resolve,
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
     },
     module: {
-        rules: [typescriptRules, sassRules],
+        rules: [typescriptRules, sassRules, fileLoaderRules],
     },
     // target: "web",
     // Plugins
