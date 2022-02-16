@@ -9,8 +9,6 @@ import {
   useDisclosure,
   FlexProps,
 } from "@chakra-ui/react";
-// Data
-import { SIDEBAR_DATA } from "./../../../data/Sidebar/SidebarData";
 // Sidebar Movile
 import { MobileNav } from "./SidebarMovile/SidebarMovile";
 import { SidebarContent } from "./SIdebarContent/SidebarContent";
