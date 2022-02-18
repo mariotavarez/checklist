@@ -24,6 +24,8 @@ export const FormLogin = () => {
         initialValues={{ usuario: "", contrasena: "" }}
         validationSchema={LOGIN_SCHEMA}
         onSubmit={(values, actions) => {
+          localStorage.setItem("idSesion", (Math.random() * 100000).toString());
+
           navigate(`/inicio`);
           showMessage({ message: "Acceso correcto", icon: "👌" });
         }}

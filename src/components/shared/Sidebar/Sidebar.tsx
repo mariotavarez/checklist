@@ -7,16 +7,10 @@ import {
   Drawer,
   DrawerContent,
   useDisclosure,
-  FlexProps,
 } from "@chakra-ui/react";
 // Sidebar Movile
 import { MobileNav } from "./SidebarMovile/SidebarMovile";
 import { SidebarContent } from "./SIdebarContent/SidebarContent";
-
-interface NavItemProps extends FlexProps {
-  icon: any;
-  children: ReactText;
-}
 
 export const Sidebar = ({ children }: { children: ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
